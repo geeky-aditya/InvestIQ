@@ -1,0 +1,35 @@
+#supportHero{
+    background-color: rgb(56,126,209);
+    color:white;
+    padding: 50px 0;
+}
+#supportWrapper{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 100px;
+
+}
+#supportHero a{
+    color:white;
+}
+#supportHero input{
+    padding: 12px 14px;
+    width: 70%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    border:none;
+}
+#supportHero h1 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+#supportHero h4 {
+    font-weight: 500;
+}
+#supportHero .col-6 a {
+    margin-right: 12px; 
+
+}
