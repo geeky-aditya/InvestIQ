@@ -19,6 +19,10 @@ A full-stack stock trading dashboard inspired by Zerodha, built using the MERN s
 - ⚡ REST API Backend with Express.js
 - 🔒 Password Hashing using bcrypt
 - 🌐 MERN Stack Architecture
+- AI Assistant powered by OpenAI GPT-4o-mini
+- 💬 ChatGPT-style financial chatbot interface
+- 🧠 Ask investing, stocks, SIP, and mutual fund related questions
+- ⚡ Real-time AI responses
 
 ---
 
@@ -39,3 +43,4 @@ A full-stack stock trading dashboard inspired by Zerodha, built using the MERN s
 - Mongoose
 - JWT Authentication
 - bcryptjs
+-  OpenAI API
