@@ -18,7 +18,7 @@ const Login = () => {
       localStorage.setItem("token", res.data.token);
       toast.success("Login successful 🚀");
       setTimeout(() => {
-        window.location.href = `http://localhost:5174?token=${res.data.token}`;
+        window.location.href = `https://investiq-dashboard.onrender.com/?token=${res.data.token}`;
       }, 1500);
 
       // 🔥 redirect to dashboard app
