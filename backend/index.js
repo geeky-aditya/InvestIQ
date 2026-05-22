@@ -19,7 +19,8 @@ const client = new OpenAI({
   apiKey: process.env.OPEN_API_KEY,
 });
 app.use(cors({
-  origin: ["http://localhost:5173", "http://localhost:5174"],
+  origin: ["http://localhost:5173", "http://localhost:5174",
+    "https://investiq-frontend-xc5x.onrender.com","https://investiq-dashboard.onrender.com"],
   credentials: true,
 }));
 // app.use(cors());
