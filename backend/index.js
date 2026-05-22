@@ -12,8 +12,12 @@ const bodyParser = require("body-parser")
 const cors = require("cors");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const JWT_SECRET = "mysecret"; 
+const JWT_SECRET = process.env.JWT_SECRET;
 const axios = require("axios");
+const OpenAI = require("openai");
+const client = new OpenAI({
+  apiKey: process.env.OPEN_API_KEY,
+});
 app.use(cors({
   origin: ["http://localhost:5173", "http://localhost:5174"],
   credentials: true,
@@ -209,7 +213,6 @@ app.get("/allPositions",async(req,res)=>{
   res.json(allPositions);
 })
 
-
 // app.post("/newOrder",async(req,res)=>{
 //   let newOrder = new OrdersModel({
 //   name: req.body.name,
@@ -359,7 +362,37 @@ app.post("/login", async (req, res) => {
     res.status(500).send("Login error");
   }
 });
+app.post("/ai", async (req, res) => {
+  try {
+    const { prompt } = req.body;
 
+    const completion = await client.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a helpful stock market and investing assistant for InvestIQ users.",
+        },
+        {
+          role: "user",
+          content: prompt,
+        },
+      ],
+    });
+
+    res.json({
+      reply: completion.choices[0].message.content,
+    });
+
+  } catch (err) {
+    console.log(err);
+
+    res.status(500).json({
+      reply: "AI error",
+    });
+  }
+});
 const authMiddleware = (req, res, next) => {
   const token = req.headers.authorization;
 
