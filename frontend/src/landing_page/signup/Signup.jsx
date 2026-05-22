@@ -21,7 +21,7 @@ const Signup = () => {
       toast.success("Signup successful");
       //window.location.href = "/login";
       setTimeout(() => {
-        window.location.href = "/login"
+         navigate("/login");
       }, 2000);
 
     } catch (err) {
