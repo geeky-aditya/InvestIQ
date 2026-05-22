@@ -6,7 +6,7 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/allOrders")
+    axios.get("https://investiq-backend-emic.onrender.com/allOrders")
       .then((res) => {
         console.log(res.data); // check here
         setOrders(res.data);
@@ -16,7 +16,7 @@ const Orders = () => {
       });
   }, []);
    const handleDelete = (id) => {
-    axios.delete(`http://localhost:8080/deleteOrder/${id}`)
+    axios.delete(`https://investiq-backend-emic.onrender.com/deleteOrder/${id}`)
       .then(() => {
         setOrders((prev) => prev.filter((o) => o._id !== id));
       })

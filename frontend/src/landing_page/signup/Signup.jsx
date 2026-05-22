@@ -12,7 +12,7 @@ const Signup = () => {
 
   const handleSignup = async () => {
     try {
-      await axios.post("http://localhost:8080/signup", {
+      await axios.post("https://investiq-backend-emic.onrender.com/signup", {
         name,
         email,
         password,

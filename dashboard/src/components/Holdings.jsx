@@ -5,7 +5,7 @@ import { VerticalGraph } from "./VerticalGraph";
 const Holdings = () => {
     const[allHoldings,setAllHoldings] = useState([]);
     useEffect(()=>{
-      axios.get("http://localhost:8080/allHoldings")
+      axios.get("https://investiq-backend-emic.onrender.com/allHoldings")
       .then((res)=>{
         console.log(res.data);
         setAllHoldings(res.data);

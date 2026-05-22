@@ -14,7 +14,7 @@ const AiAssistant = () => {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:8080/ai",
+        "https://investiq-backend-emic.onrender.com/ai",
         { prompt }
       );
 
