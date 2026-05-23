@@ -11,7 +11,7 @@ const Menu = () => {
   }
   const handleLogout = () => {
   localStorage.removeItem("token");
-  window.location.href = "https://investiq-dashboard.onrender.com/login";
+  window.location.href = "https://investiq-frontend-xc5x.onrender.com/login";
 };
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
